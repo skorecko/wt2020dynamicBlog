@@ -1,7 +1,7 @@
 {
   "name": "wt2020dynamicblog",
   "version": "1.0.0",
-  "description": "Dynamic blog demo for Web Technologies course at DCI FEEI TUKE in 2020.",
+  "description": "Dynamic blog demo for Web Technologies course at DCI FEEI TUKE in 2020.\n",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
