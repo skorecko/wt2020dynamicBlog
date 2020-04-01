@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Stefan Korecko" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/treesBlog.css" media="screen" />
+
+    <title>My Favourite Trees</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Favourite Trees</h1>
+
+      <div class="menu">
+        <button id="menuTitle" onclick="displayOrHideMenu()">Articles</button>
+
+        <nav id="menuIts" class="menu mnHide">
+          <a href="#artIntro">Welcome!</a>
+          <a href="#artPine">Pine</a>
+          <a href="#artOak">Oak</a>
+          <a href="#artOpinions">Visitor Opinions</a>
+          <a href="#artOpnFrm">Your Opinion</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article id="artIntro">
+        <h2>Welcome!</h2>
+
+        <p>
+          Welcome to my page. My name is <b>Ján ŠK. Trieska</b>. I live in
+          <i>Woodly Woodens</i>. I am a <i>woodcutter</i>. I love trees and I
+          would like to tell you something about my most favourite ones.
+        </p>
+        <footer class="menuLink">
+          <a href="#menuTitle">Back to the menu</a>
+        </footer>
+      </article>
+
+      <article id="artPine">
+        <h2>Pine</h2>
+        <figure>
+          <img src="fig/pineBw.png" height="150" title="fig.pine" alt="pine" />
+        </figure>
+
+        <section>
+          <header><h2>Basic Data</h2></header>
+          <!--Podobne ako vyššie, aj tu pôvodne bolo h1 -->
+
+          <p>
+            Pine is a softwood coniferous tree.
+          </p>
+
+          <dl>
+            <!-- zoznam moze byt iba mimo odsekov -->
+            <dt>
+              Latin name:
+              <!-- uzatvaracia znacka nemusi byt uvedena -->
+            </dt>
+            <dd>Pinus</dd>
+            <dt>Division:</dt>
+            <dd>Pinophyta</dd>
+            <dt>Class:</dt>
+            <dd>Pinopsida</dd>
+          </dl>
+
+          <article>
+            <h2>Where You Can Find Pines</h2>
+            <!-- Pôvodne tu nadpis nebol.
+                                                   Ale article by nadpis mal mať
+                                                   (bez neho generuje warning pri validácii) -->
+            <p>Pines grow in</p>
+            <ol>
+              <li>Europe and</li>
+              <li>Asia.</li>
+            </ol>
+          </article>
+        </section>
+
+        <section>
+          <h2>My Opinion</h2>
+
+          <p>
+            I like pines, because
+          </p>
+
+          <ul>
+            <li>they have long needles,</li>
+            <li>smell nice and</li>
+            <li>thanks to the softwood they are easy to cut.</li>
+          </ul>
+        </section>
+
+        <footer class="menuLink">
+          <a href="#menuTitle">Back to the menu</a>
+        </footer>
+      </article>
+
+      <article id="artOak">
+        <h2>Oak</h2>
+        <figure>
+          <img src="fig/oak.png" height="150" title="fig.oak" alt="oak" />
+        </figure>
+        <p>
+          Oak is a deciduous tree with hardwood. It lives long and grows slowly.
+          Its leaves are simple, lobate and fall off before the winter.
+        </p>
+        <footer class="menuLink">
+          <a href="#menuTitle">Back to the menu</a>
+        </footer>
+      </article>
+
+      <article id="artOpinions">
+        <h2>Visitor Opinions</h2>
+        <div id="opinionsContainer"></div>
+        <footer class="menuLink">
+          <a href="#menuTitle">Back to the menu</a>
+        </footer>
+      </article>
+
+      <article id="artOpnFrm">
+        <h2>Your Opinion</h2>
+        <p>
+          Please, use the form below to state your opinion about this page.
+        </p>
+
+        <form id="opnFrm">
+          <label for="nameElm">Your name:</label>
+
+          <input
+            type="text"
+            name="login"
+            id="nameElm"
+            size="20"
+            maxlength="50"
+            placeholder="Enter your name here"
+            required
+          />
+
+          <br /><br />
+
+          <label for="opnElm">Your opinion:</label>
+
+          <textarea
+            name="comment"
+            id="opnElm"
+            cols="50"
+            rows="3"
+            placeholder="Express your opinion here"
+            required
+          ></textarea>
+          <br /><br />
+
+          <button type="submit">Send</button>
+        </form>
+
+        <footer class="menuLink">
+          <a href="#menuTitle">Back to the menu</a>
+        </footer>
+      </article>
+    </main>
+
+    <footer>
+      Ján ŠK. Trieska <br />
+      (c) 2018-20
+    </footer>
+
+    <!----------------------------- Mustache template -------------------------------------------------------------------->
+
+    <script id="mTmplOneOpinion" type="text/template">
+      <section>
+          <h3>{{name}} <i>{{createdDate}}</i></h3>
+          <p>{{comment}}</p>
+      </section>
+    </script>
+
+    <!--our JavaScript  file-->
+    <script src="js/myTreesFormLStorageHtmlMstch.js"></script>
+  </body>
+</html>
